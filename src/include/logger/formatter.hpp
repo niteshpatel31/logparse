@@ -42,7 +42,27 @@ namespace logger {
 class Formatter {
 public:
   Formatter();
-  explicit Formatter(std::string& patter);
+  explicit Formatter(std::string patter);
+  Formatter(const Formatter &) = default;
+  Formatter &operator=(const Formatter &) = default;
+  Formatter(Formatter &&) noexcept = default;
+  Formatter &operator=(Formatter &&) noexcept = default;
+  ~Formatter() = default;
+
+  /**
+   * Format a log record.
+   *
+   * Output is appended to buffer.
+   * Buffer is NOT cleared.
+   */
+  void format(fmt::memory_buffer &buffer, const LogRecord &record) const;
+  [[nodiscard]] const std::string &pattern() const noexcept;
+  void set_pattern(const std::string &patter);
+
+private:
+  void format_token(fmt::memory_buffer &buffer, char token,
+                    const LogRecord &record) const;
+  std::string m_pattern;
 };
 
 } // namespace logger
