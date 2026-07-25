@@ -1,4 +1,4 @@
-#include "include/logger/sink.hpp"
+#include "logger/sink.hpp"
 #include <cstdio>
 #include <filesystem>
 #include <fmt/base.h>
@@ -116,8 +116,8 @@ void SinkManager::flush() {
   return;
 }
 
-bool SinkManager::empty() const noexcept{return m_sinks.empty();}
+bool SinkManager::empty() const noexcept { return m_sinks.empty(); }
 
-std::size_t SinkManager::size()const noexcept{return m_sinks.size();}
+std::size_t SinkManager::size() const noexcept { return m_sinks.size(); }
 
 } // namespace logger

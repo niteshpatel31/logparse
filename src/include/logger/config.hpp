@@ -51,7 +51,7 @@ struct Config {
   bool colored_output{true};
   bool flush_on_error{true};
 
-  std::string pattern{"[%Y-%m-%d %H:%M:%S] [%L] [T%t] %m"};
+  std::string pattern{"[%Y-%m-%d %H:%M:%S] [%l] [T%t] %m"};
 
   // file sink
   bool enable_console{true};
@@ -63,7 +63,7 @@ struct Config {
   // Async Logger
   std::size_t queue_capacity{UINT16_MAX + 1};
 
-  OverflowPolicy OverflowPolicy{OverflowPolicy::Block};
+  OverflowPolicy overflowPolicy{OverflowPolicy::Block};
 
   // flush
   std::size_t flush_interval_ms{1000}; // 1 sec
