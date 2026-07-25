@@ -1,1 +1,47 @@
+# Build directories
+build/
+cmake-build-*/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+DartConfiguration.tcl
+Makefile
+Testing/
+*_include.cmake
+
+# Compiled objects and libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.d
+
+# Local binaries
 main
+logger_tests
+logger_basic_example
+logger_benchmark
+
+# Coverage and profiling output
+*.gcda
+*.gcno
+*.gcov
+coverage/
+
+# Editor and OS files
+.cache/
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
